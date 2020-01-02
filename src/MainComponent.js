@@ -1,26 +1,31 @@
-import { connect } from 'react-redux';
-import React       from 'react';
+import { connect }              from 'react-redux';
+import React                    from 'react';
+import { ChangerValueFirstKey } from './actions';
+
 
 @connect(state => {
     return state;
 }, dispatch => {
     return {
-        changeFistKey() {
+        changeFistKey(state) {
             dispatch({
-                type              : 'CHANGE_FIRST_KEY',
-                valueNewOfFirstKey: 'bar class',
+                type: ChangerValueFirstKey,
+                ...state,
             });
         },
     };
 })
- class MainComponent extends React.Component {
+class MainComponent extends React.Component {
     render() {
         const { changeFistKey } = this.props;
         return (
-            <div onClick={() => changeFistKey()}>
+            <div onClick={() => changeFistKey({
+                valueNewOfFirstKey: 'bar class'
+            })}>
                 CHANGE_FIRST_KEY class reactJS
             </div>
         );
     }
 }
+
 export default MainComponent;

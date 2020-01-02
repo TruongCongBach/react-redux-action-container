@@ -886,6 +886,11 @@
   resolved "https://registry.yarnpkg.com/@csstools/normalize.css/-/normalize.css-10.1.0.tgz#f0950bba18819512d42f7197e56c518aa491cf18"
   integrity sha512-ij4wRiunFfaJxjB0BdrYHIH8FxBJpOwNPhhAcunlmPdXudL1WQV1qoP9un6JsEBAgQH+7UXyyjh0g7jTxXK6tg==
 
+"@fusion.io/container@^3.1.7":
+  version "3.1.7"
+  resolved "https://registry.yarnpkg.com/@fusion.io/container/-/container-3.1.7.tgz#d231eb54b75e4e1a672944bde7f397c523d07a18"
+  integrity sha512-dAJZ6kpYcnbaAR01Laxi/tQ5jGjh787HI/r72d56PJ50E0w5SbZ4d5D2BBKPoAfvBR5uza1hSElF10QWbdS9mA==
+
 "@hapi/address@2.x.x":
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/@hapi/address/-/address-2.1.4.tgz#5d67ed43f3fd41a69d4b9ff7b56e7c0d1d0a81e5"
