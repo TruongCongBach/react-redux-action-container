@@ -1,18 +1,10 @@
-class ChangerValueFirstKey {
+import { ChangerValueFirstKey } from './classTypeActions';
 
-    static get dependencies() {
-        return [];
-    }
-
-    async run(action) {
-        return await new Promise((resolve, reject) => {
-            resolve(action.valueNewOfFirstKey);
-        } );
-
-    }
-}
+export const changeFistKey = (dispatch) => valueOfFirstKey => {
+    dispatch({
+            type: ChangerValueFirstKey,
+            valueOfFirstKey: valueOfFirstKey
+        })
+};
 
 
-export {
-    ChangerValueFirstKey
-}

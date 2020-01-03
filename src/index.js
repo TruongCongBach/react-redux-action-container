@@ -6,7 +6,7 @@ import * as serviceWorker               from './serviceWorker';
 import { applyMiddleware, createStore } from 'redux';
 import { Provider }                     from 'react-redux';
 import container                        from './Container';
-import { ChangerValueFirstKey }         from './actions';
+import { ChangerValueFirstKey }         from './actions/classTypeActions';
 
 
 const fistMiddleware = store => next => action => {
@@ -26,20 +26,15 @@ const middlewareActionContainer = store => next => action => {
     const actionContainer = container.make(action.type);
     actionContainer.run(action).then(res => {
         return next({
-            ...actionContainer,
             ...action,
             response: res
         })
     }).catch(error => {
         return next({
-            ...actionContainer,
             ...action,
             response: error
         })
-
     })
-
-
 };
 
 
@@ -63,7 +58,7 @@ const firstReducer = (state = { firstKey: 'foo'} ,action )  => {
 
 
 
-const store = createStore(firstReducer, applyMiddleware(fistMiddleware, secondMiddleware, middlewareActionContainer));
+const store = createStore(firstReducer, applyMiddleware(middlewareActionContainer, fistMiddleware, secondMiddleware));
 
 ReactDOM.render(
     <Provider store={store}>
